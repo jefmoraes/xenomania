@@ -47,6 +47,7 @@ export const Glass = styled.div<ContainerProps>`
   background-position: center;
   filter: blur(30px);
   position: absolute;
+  z-index: 0;
 `;
 
 
@@ -60,7 +61,8 @@ export const Iconglass = styled.span`
   width: 72px;
   height: 72px;
   border-radius: 36px;
-  z-index: 2;
+  z-index: 1;
+
 `;
 
 
@@ -71,6 +73,7 @@ export const InfoCard = styled(CardStyles)<ContainerProps>`
   background-image: url(${props => props.source});
   background-size: cover;
   background-position: center;
+  z-index: 2;
 `;
 
 export const ScoreCard = styled.span`
@@ -85,7 +88,6 @@ export const ScoreCard = styled.span`
   backdrop-filter: blur(50px);
   color: ${props =>props.theme.colors.text};
   font-size: 13px;
-
 `;
 
 export const NameCardContainer = styled.span`

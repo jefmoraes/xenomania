@@ -48,8 +48,8 @@ export function Tip({source, name, pos, status}:TipProps){
     <Container>
       <Content style={contentStyle}>
         <GlassCardFront>
-          <Glass source={source}/>
           <Iconglass> ? </Iconglass>
+          <Glass source={source}/>
         </GlassCardFront>
         <InfoCard 
           style={ status === 'unlocked' ? { justifyContent: 'flex-end'} : undefined} 
