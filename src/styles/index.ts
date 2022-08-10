@@ -21,7 +21,8 @@ export const Header = styled.header`
   border-bottom: 1px  ${props => props.theme.colors.primary};
 
   @media (max-width: 540px) {
-    padding: 0 16px;
+    padding: 0 32px;
+
   }
 `;
 export const TitleHeader = styled.span`
@@ -73,6 +74,13 @@ export const ContentCards = styled.div`
   ::-webkit-scrollbar-thumb:hover{
     background-color: ${props => props.theme.colors.scrollBarHover};
   }
+
+  @media (max-width:540px) {
+    gap: 100px;
+    padding: 0 75px;
+    
+  }
+
   `;
   
 export const ContainerInput = styled.div`
@@ -123,7 +131,7 @@ export const Input = styled(motion.input)`
   border-width: 1; 
   border-style: solid;
   transition: border-color 2s ease;
-  border-color: ${props => props.theme.colors.background};
+  border-color: ${props => props.theme.colors.inputCard};
 
   @media (max-width:540px) {
     height: 44px;

@@ -21,6 +21,7 @@ import {
 
 } from '../styles'
 import { Modal } from '../Components/Modal';
+import Head from "next/head"
 
 const Home:NextPage = () =>{
   const {colors} = useContext(ThemeContext)
@@ -90,9 +91,12 @@ const Home:NextPage = () =>{
 
   return(
     <Container>
+      <Head>
+        <title>NotAmerican</title>
+      </Head>
       <Header>
-        <TitleHeader>Xenomania</TitleHeader>
-        <HelpButton onClick={modalPull}>How to Play ?</HelpButton> 
+        <TitleHeader>NotAmerican</TitleHeader>
+        <HelpButton onClick={modalPull}>Como Jogar ?</HelpButton> 
       </Header>
       { modal && <Modal modalPull={modalPull}/> }
       <main style={{ display:'flex', flexDirection:'column' , justifyContent:'space-evenly' , flex: 1 , paddingTop:114}}>

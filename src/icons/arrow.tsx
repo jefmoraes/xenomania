@@ -12,7 +12,7 @@ function Arrow( {...rest}:HTMLAttributes<HTMLOrSVGElement>
       width="16"
       height="16"
       viewBox="0 0 24 24"
-      transform="rotate(-270)"
+      
       {...rest}
     >
       <path d="M8.122 24L4 20l8-8-8-8 4.122-4L20 12z"></path>

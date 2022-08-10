@@ -30,7 +30,10 @@ export function Modal({modalPull}:Props){
       >    
         <Content>
           <ButtonExit id='buttonExit'>
-            <Arrow id='arrow'/>
+            <Arrow 
+              id='arrow'
+              style={{transform: 'rotate(-270deg)'}}
+            />
           </ButtonExit>
           <Info>Instruções</Info>
           <ContentLeftandRight>

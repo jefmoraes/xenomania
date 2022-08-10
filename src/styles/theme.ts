@@ -2,6 +2,7 @@ export const theme = {
   colors:{
     primary: '#30343F',
     secondary: '#262A30',
+    tertiary: '#212529',
     button: '#52223F',
     sendInput: '#89023E',
     background:'#0D0D0D',
