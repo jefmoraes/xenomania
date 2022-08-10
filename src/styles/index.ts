@@ -22,9 +22,9 @@ export const Header = styled.header`
 
   @media (max-width: 540px) {
     padding: 0 32px;
-
   }
 `;
+
 export const TitleHeader = styled.span`
   color: ${props => props.theme.colors.text};
   font-size: 24px;
@@ -56,10 +56,9 @@ export const ContentCards = styled.div`
   display: flex;
   flex-direction: row;
   gap: 48px;
-  padding: 0 42px 20px;
+  padding: 0px 42px  10px;
   overflow-x: scroll;
-
-
+  
   ::-webkit-scrollbar {
     background-color: transparent;
     height: 8px;
@@ -74,13 +73,6 @@ export const ContentCards = styled.div`
   ::-webkit-scrollbar-thumb:hover{
     background-color: ${props => props.theme.colors.scrollBarHover};
   }
-
-  @media (max-width:540px) {
-    gap: 100px;
-    padding: 0 75px;
-    
-  }
-
   `;
   
 export const ContainerInput = styled.div`
@@ -90,7 +82,7 @@ export const ContainerInput = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   padding: 0 14px 50px;
-  
+  margin-top: 10px;
 `;
 
 export const ContentInput = styled.div`
