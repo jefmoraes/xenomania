@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex ;
   min-height: 100vh;
   flex-direction: column;
+ 
 `;
 
 export const Header = styled.header`
@@ -21,7 +22,8 @@ export const Header = styled.header`
   border-bottom: 1px  ${props => props.theme.colors.primary};
 
   @media (max-width: 540px) {
-    padding: 0 32px;
+    
+    height: 70px;
   }
 `;
 
@@ -73,6 +75,12 @@ export const ContentCards = styled.div`
   ::-webkit-scrollbar-thumb:hover{
     background-color: ${props => props.theme.colors.scrollBarHover};
   }
+
+  @media (max-width: 540px) {
+    gap: 24px;
+    margin-top: -30px;
+  }
+
   `;
   
 export const ContainerInput = styled.div`
@@ -80,9 +88,13 @@ export const ContainerInput = styled.div`
   flex-direction: row; 
   gap: 24px;
   justify-content: center;
-  flex-wrap: wrap;
+  
   padding: 0 14px 50px;
-  margin-top: 10px;
+
+  @media (max-width: 540px) {
+    gap: 10px;
+    justify-content: center;
+  }
 `;
 
 export const ContentInput = styled.div`
@@ -91,6 +103,8 @@ export const ContentInput = styled.div`
   gap: 20px;
   max-width: 580px;
   width: 100%;
+ 
+ 
 `;
 
 export const FlexNameInput = styled.span`
@@ -100,7 +114,7 @@ export const FlexNameInput = styled.span`
   align-self: center;
 
   @media (max-width:540px) {
-   font-size: 22px;
+   font-size: 17px;
   }
 `;
 
@@ -110,6 +124,7 @@ export const ButtonContainer = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   gap: 20px;
+  
 
 `;
 
@@ -126,7 +141,9 @@ export const Input = styled(motion.input)`
   border-color: ${props => props.theme.colors.inputCard};
 
   @media (max-width:540px) {
-    height: 44px;
+    height: 28px;
+    border-radius: 14px;
+    font-size: 13px;
     
   }
 `;
@@ -142,7 +159,9 @@ export const SendButton = styled.button`
   cursor: pointer;
 
   @media (max-width:540px) {
-    padding: 8px 48px;
+    padding: 7px 20px;
+    font-size: 12px;
+    border-radius: 13px;
   }
 `;
 
