@@ -1,4 +1,4 @@
-import { CSSProperties, useContext, useMemo, useState } from 'react';
+import { CSSProperties, HTMLAttributes, useContext, useMemo, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import {
   Container, 
