@@ -14,14 +14,14 @@ import {
 
 } from './styles'
 
-export type TipProps = {
+export type TipProps = HTMLAttributes<HTMLDivElement> & {
   source: string;
   name: string;
   pos: number;
   status: 'unlocked' | 'selected' | 'locked'
 }
 
-export function Tip({source, name, pos, status}:TipProps){
+export function Tip({source, name, pos, status, ...rest}:TipProps){
 
   const cardContentStyle = useMemo<CSSProperties>(() => ({
     transform: 'rotateY(180deg)',
@@ -45,7 +45,7 @@ export function Tip({source, name, pos, status}:TipProps){
   }
 
   return(
-    <Container>
+    <Container {...rest}>
       <Content style={contentStyle}>
         <GlassCardFront>
           <Iconglass> ? </Iconglass>
