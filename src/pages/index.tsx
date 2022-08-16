@@ -1,5 +1,5 @@
 import { NextPage } from "next"
-import { ChangeEvent, cloneElement, CSSProperties, FormEvent, useContext, useMemo, useRef, useState } from 'react'
+import { ChangeEvent, cloneElement, CSSProperties, FormEvent, HtmlHTMLAttributes, useContext, useMemo, useRef, useState } from 'react'
 import { ThemeContext } from 'styled-components'
 import { Tip, TipProps } from '../Components/Tip'
 import { locations } from '../data/locations'
@@ -16,7 +16,8 @@ import {
   ContainerInput,
   SendButton,
   ContentInput,
-  ButtonContainer
+  ButtonContainer,
+  Main
 
 
 } from '../styles'
@@ -49,9 +50,12 @@ const Home:NextPage = () =>{
       console.log('element.offsetLeft:'+ element.offsetLeft)
 
       if (elementLeft >= tips.offsetWidth + tips.scrollLeft) { //verifica se o elemento esta na tela 
-        tips.scrollLeft = elementLeft - tips.offsetWidth + 48;
+        const deslocamento = elementLeft - tips.offsetWidth;
+        tips.scrollLeft = curId.current === 0 
+          ? deslocamento 
+          : deslocamento + 48;
       } else if (elementLeft <=  tips.scrollLeft) {
-        tips.scrollLeft = element.offsetLeft + 48;
+        tips.scrollLeft = element.offsetLeft ;
       }
 
       /* tips.scrollTo({
@@ -71,13 +75,16 @@ const Home:NextPage = () =>{
       if(stringSemAcento.toUpperCase() === local.name.toUpperCase()){
         console.log('parabéns');
         ref.current++;
+        
 
         if(ref.current < locations.length){
         
           setLocal(locations[ref.current]);
     
           const newTips = tips.map((item,index): TipProps => {
+
             return{
+              
               source:item.source,
               name: item.name,
               pos: item.pos,
@@ -88,6 +95,7 @@ const Home:NextPage = () =>{
           setTips([...newTips]);
           setTimeout(() => {
             setTips(locations[ref.current].tips as TipProps[]);
+           
           }, 500)
           
         }else{
@@ -95,10 +103,11 @@ const Home:NextPage = () =>{
         }
         setAttempts(true);
         erros.current = 0;
-        
+        curId.current = 0; 
+        scrollToCard();
         //animação
       }else{
-        if( erros.current <= locations.length ){
+        if( erros.current < 5 ){
           curId.current++;
           scrollToCard();
           const updateTips = tips;
@@ -130,7 +139,7 @@ const Home:NextPage = () =>{
         <HelpButton onClick={modalPull}>Como Jogar ?</HelpButton> 
       </Header>
       { modal && <Modal modalPull={modalPull}/> }
-      <main style={{ display:'flex', flexDirection:'column' , justifyContent:'space-evenly' , flex: 1 , paddingTop:114}}>
+      <Main>
         <ContentCards id='tips'>
           {tips.map ((item,index) => {
 
@@ -169,7 +178,7 @@ const Home:NextPage = () =>{
             <SendButton onClick={handleAnswerComparation}>Enviar</SendButton>
           </ButtonContainer>
         </ContainerInput>
-      </main>
+      </Main>
     </Container>
   )
 }

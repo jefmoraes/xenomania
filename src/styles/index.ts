@@ -5,7 +5,6 @@ export const Container = styled.div`
   display: flex ;
   min-height: 100vh;
   flex-direction: column;
- 
 `;
 
 export const Header = styled.header`
@@ -20,10 +19,13 @@ export const Header = styled.header`
   z-index: 1;
   backdrop-filter: blur(15px);
   border-bottom: 1px  ${props => props.theme.colors.primary};
+ 
 
   @media (max-width: 540px) {
-    
     height: 70px;
+  }
+  @media (max-width: 414px) {
+    height: 60px;
   }
 `;
 
@@ -54,6 +56,25 @@ export const HelpButton = styled.button`
   }
 `;
 
+export const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 100px;
+  justify-content: center;
+  gap: 48px;
+
+  @media (max-width: 540px) {
+    padding-top: 80px;
+    justify-content: flex-start;
+    
+  }
+  @media (max-width: 414px) {
+    gap: 0;
+    padding-top: 60px;
+  }
+`;
+
 export const ContentCards = styled.div`
   display: flex;
   flex-direction: row;
@@ -78,9 +99,8 @@ export const ContentCards = styled.div`
 
   @media (max-width: 540px) {
     gap: 24px;
-    margin-top: -30px;
   }
-
+ 
   `;
   
 export const ContainerInput = styled.div`
@@ -88,12 +108,10 @@ export const ContainerInput = styled.div`
   flex-direction: row; 
   gap: 24px;
   justify-content: center;
-  
-  padding: 0 14px 50px;
+  padding: 16px 14px ;
 
   @media (max-width: 540px) {
     gap: 10px;
-    justify-content: center;
   }
 `;
 
@@ -104,6 +122,9 @@ export const ContentInput = styled.div`
   max-width: 580px;
   width: 100%;
  
+  @media (max-width: 540px) {
+    gap: 10px;
+  }
  
 `;
 
