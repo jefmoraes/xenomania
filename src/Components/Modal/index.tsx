@@ -12,12 +12,16 @@ export function Modal({modalPull}:Props){
   const [animate, setAnimate] = useState(true)
 
   const handleOutsideClick = (event: any) => {
-    if(event.target?.id === 'overlay' || event.target?.id === 'buttonExit' || event.target?.id === 'arrow'){
-      setAnimate(false)
-      setTimeout(() => {
-        modalPull()
-      },500) 
+    if(event.target?.id === 'overlay'){
+      handleOnClose()
     }
+  }
+
+  const handleOnClose = () => {
+    setAnimate(false)
+    setTimeout(() => {
+      modalPull()
+    },500) 
   }
 
   return(
@@ -29,9 +33,8 @@ export function Modal({modalPull}:Props){
         transition={ { duration: 0.5}}
       >    
         <Content>
-          <ButtonExit id='buttonExit'>
+          <ButtonExit onClick={handleOnClose}>
             <Arrow 
-              id='arrow'
               style={{transform: 'rotate(-270deg)'}}
             />
           </ButtonExit>
