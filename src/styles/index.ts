@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex ;
   min-height: 100vh;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const Header = styled.header`
@@ -19,7 +20,7 @@ export const Header = styled.header`
   z-index: 1;
   backdrop-filter: blur(15px);
   border-bottom: 1px  ${props => props.theme.colors.primary};
- 
+  max-width: 1536px;
 
   @media (max-width: 540px) {
     height: 70px;
@@ -63,6 +64,7 @@ export const Main = styled.main`
   padding-top: 100px;
   justify-content: center;
   gap: 48px;
+  max-width: 1536px;
 
   @media (max-width: 540px) {
     padding-top: 110px;
