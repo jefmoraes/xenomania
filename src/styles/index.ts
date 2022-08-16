@@ -69,7 +69,7 @@ export const Main = styled.main`
     justify-content: flex-start;
     
   }
-  @media (max-width: 414px) {
+  @media (max-width: 413px) {
     gap: 0;
     padding-top: 60px;
   }
