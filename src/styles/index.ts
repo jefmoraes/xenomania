@@ -67,6 +67,7 @@ export const Main = styled.main`
   @media (max-width: 540px) {
     padding-top: 110px;
     justify-content: flex-start;
+    gap: 24px;
     
   }
   @media (max-width: 413px) {
