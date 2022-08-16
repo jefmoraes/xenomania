@@ -65,7 +65,7 @@ export const Main = styled.main`
   gap: 48px;
 
   @media (max-width: 540px) {
-    padding-top: 80px;
+    padding-top: 110px;
     justify-content: flex-start;
     
   }
@@ -117,6 +117,7 @@ export const ContainerInput = styled.div`
 
 export const ContentInput = styled.div`
   display: flex;
+
   flex-direction: column;
   gap: 20px;
   max-width: 580px;
