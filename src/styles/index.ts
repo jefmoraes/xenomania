@@ -65,6 +65,7 @@ export const Main = styled.main`
   justify-content: center;
   gap: 48px;
   max-width: 1536px;
+  width: 100%;
 
   @media (max-width: 540px) {
     padding-top: 110px;
