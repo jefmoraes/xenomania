@@ -90,7 +90,7 @@ export const ContentCards = styled.div`
   display: flex;
   flex-direction: row;
   gap: 48px;
-  padding: 0px 42px  10px;
+  padding: 0px 42px 10px;
   overflow-x: scroll;
   width: 100%;
 
@@ -111,9 +111,10 @@ export const ContentCards = styled.div`
 
   @media (max-width: 540px) {
     gap: 24px;
-    padding: 0px 16px  10px;
+    padding: 0px 16px 10px;
+    margin-right: 16px;
   }
- 
+
   `;
   
 export const ContainerInput = styled.div`
@@ -122,12 +123,11 @@ export const ContainerInput = styled.div`
   max-width: 580px;
   width: 100%;
   gap: 24px;
-  padding: 16px 14px;
- 
+  padding: 16px;
 
   @media (max-width: 540px) {
     gap: 10px;
-    padding: 16px 8px;
+
   }
 `;
 
