@@ -11,18 +11,18 @@ import {
   HelpButton, 
   TitleHeader, 
   ContentCards,
-  FlexNameInput,
-  Input,
-  ContainerInput,
-  SendButton,
   ContentInput,
-  ButtonContainer,
-  Main
+  ContainerInput,
+  Input,
+  SendButton,
+  Main,
+  ButtonMin
 
 
 } from '../styles'
 import { Modal } from '../Components/Modal';
 import Head from "next/head"
+import { Check } from "../icons/Check"
 
 const Home:NextPage = () =>{
   const {colors} = useContext(ThemeContext)
@@ -52,7 +52,7 @@ const Home:NextPage = () =>{
       if (elementLeft >= tips.offsetWidth + tips.scrollLeft) { //verifica se o elemento esta na tela 
         const deslocamento = elementLeft - tips.offsetWidth;
         tips.scrollLeft = curId.current === 0 
-          ? deslocamento 
+          ? 0
           : deslocamento + 48;
       } else if (elementLeft <=  tips.scrollLeft) {
         tips.scrollLeft = element.offsetLeft ;
@@ -107,7 +107,7 @@ const Home:NextPage = () =>{
         scrollToCard();
         //animação
       }else{
-        if( erros.current < 5 ){
+        if( erros.current < 4 ){
           curId.current++;
           scrollToCard();
           const updateTips = tips;
@@ -132,10 +132,10 @@ const Home:NextPage = () =>{
   return(
     <Container>
       <Head>
-        <title>NotAmerican</title>
+        <title>OndeÉ?</title>
       </Head>
       <Header>
-        <TitleHeader>NotAmerican</TitleHeader>
+        <TitleHeader>OndeÉ?</TitleHeader>
         <HelpButton onClick={modalPull}>Como Jogar ?</HelpButton> 
       </Header>
       { modal && <Modal modalPull={modalPull}/> }
@@ -159,24 +159,27 @@ const Home:NextPage = () =>{
           )}
         </ContentCards>
         <ContainerInput>
-          <ContentInput>
-            <FlexNameInput>Em qual país estamos ?</FlexNameInput>
-            <Input 
-              animate={ !attempts ? 
-                {
-                  scale: 1,
-                  rotate: -2,
-                } : 
-                undefined
-              }
-              typeof='text' 
+          <ContentInput
+            animate={ !attempts ? 
+              {
+                scale: 1,
+                rotate: -2,
+              } : 
+              undefined
+            }
+            style={ !attempts  ? {borderColor: colors.sendInput} : undefined}
+          >
+            <Input  
               onChange={event => setAnswer(event.target.value)}
-              style={ !attempts  ? {borderColor: colors.sendInput} : undefined}
+              typeof='text' 
+              placeholder="Em qual país estamos?"
             />
+            <ButtonMin onClick={handleAnswerComparation}>
+              <Check/>
+            </ButtonMin>
+          
           </ContentInput>
-          <ButtonContainer>
-            <SendButton onClick={handleAnswerComparation}>Enviar</SendButton>
-          </ButtonContainer>
+          <SendButton onClick={handleAnswerComparation}>Enviar</SendButton>
         </ContainerInput>
       </Main>
     </Container>

@@ -24,6 +24,7 @@ export const Header = styled.header`
 
   @media (max-width: 540px) {
     height: 70px;
+    padding: 0 16px;
   }
   @media (max-width: 414px) {
     height: 60px;
@@ -63,6 +64,7 @@ export const Main = styled.main`
   min-height: 100vh;
   padding-top: 100px;
   justify-content: center;
+  align-items: center;
   gap: 48px;
   max-width: 1536px;
   width: 100%;
@@ -85,7 +87,8 @@ export const ContentCards = styled.div`
   gap: 48px;
   padding: 0px 42px  10px;
   overflow-x: scroll;
-  
+  width: 100%;
+
   ::-webkit-scrollbar {
     background-color: transparent;
     height: 8px;
@@ -110,84 +113,81 @@ export const ContentCards = styled.div`
 export const ContainerInput = styled.div`
   display: flex;
   flex-direction: row; 
-  gap: 24px;
-  justify-content: center;
-  padding: 16px 14px ;
-
-  @media (max-width: 540px) {
-    gap: 10px;
-  }
-`;
-
-export const ContentInput = styled.div`
-  display: flex;
-
-  flex-direction: column;
-  gap: 20px;
   max-width: 580px;
   width: 100%;
+  gap: 24px;
+  padding: 16px 14px;
  
+
   @media (max-width: 540px) {
     gap: 10px;
-  }
- 
-`;
-
-export const FlexNameInput = styled.span`
-  display: flex;
-  color: ${props => props.theme.colors.text} ;
-  font-size: 26px;
-  align-self: center;
-
-  @media (max-width:540px) {
-   font-size: 17px;
+    padding: 16px 8px;
   }
 `;
 
-
-export const ButtonContainer = styled.div`
+export const ContentInput = styled(motion.div)`
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 20px;
-  
-
-`;
-
-export const Input = styled(motion.input)`
-  height: 44px;
+  flex-direction: row;
+  flex: 1;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
   border-radius: 22px;
   background-color: ${props => props.theme.colors.inputCard};
-  color: ${props =>props.theme.colors.text};
-  font-size: 17px;
-  padding: 0 14px;
-  border-width: 1; 
+  padding: 4px;
+  border-width: 1px; 
   border-style: solid;
   transition: border-color 2s ease;
   border-color: ${props => props.theme.colors.inputCard};
-
+  
   @media (max-width:540px) {
-    height: 28px;
-    border-radius: 14px;
-    font-size: 13px;
-    
+    border-radius: 20px; 
   }
 `;
 
-export const SendButton = styled.button`
+export const ButtonMin = styled.button`
+  width: 32px;
+  height:  32px;
+  border-radius: 16px;
+  background-color:  ${props => props.theme.colors.sendInput};
+
+  @media (min-width:540px) {
+    display: none;
+  }
+`;
+
+export const Input = styled.input`
+  line-height: 24px;
   display: flex;
-  padding: 10px 46px ;
+  flex: 1;
+  margin: 0 14px;
+  font-size: 17px;
+  color: ${props =>props.theme.colors.text};
+  background-color: transparent;
+  
+  &::placeholder{
+    color: white;
+    opacity: 0.7;
+  }
+
+  @media (max-width:540px) {
+   font-size: 15px;
+  }
+
+`;
+
+export const SendButton = styled.button`
+  padding: 0 28px;
   border-radius: 23px;
   color: ${props => props.theme.colors.text};
-  font-size: 18px;
-  font-weight: 600px;
+  font-size: 17px;
+  font-weight: 500;
   background-color: ${props => props.theme.colors.sendInput};
   cursor: pointer;
 
   @media (max-width:540px) {
-    padding: 7px 20px;
-    font-size: 12px;
-    border-radius: 13px;
+    display: none;
   }
+  
 `;
 

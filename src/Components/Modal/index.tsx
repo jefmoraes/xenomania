@@ -11,7 +11,7 @@ type Props = {
 export function Modal({modalPull}:Props){
   const [animate, setAnimate] = useState(true)
 
-  const handleOutsideClick = (event: any) => {
+  const handleOutsideClick = (event: any) => { 
     if(event.target?.id === 'overlay'){
       handleOnClose()
     }
@@ -68,7 +68,7 @@ export function Modal({modalPull}:Props){
             <Line/>    
             <ContentSide>
               <GroupTitleElement>
-                <Title>A cada chute incorreto uma nova dica é desbloqueada.</Title>
+                <Title>A cada dica desbloqueada sua pontuação diminui.</Title>
                 <Group style={{gap: 20}}>
                   <ScoreInstruction>100</ScoreInstruction>
                   <ArrowRight/>
