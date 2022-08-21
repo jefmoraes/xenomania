@@ -3,7 +3,6 @@ import { motion } from "framer-motion"
 
 export const Container = styled.div`
   display: flex ;
-  min-height: 100vh;
   flex-direction: column;
   align-items: center;
 `;
@@ -75,7 +74,7 @@ export const Main = styled.main`
     gap: 24px;
     
   }
-  
+
   @media (min-width: 540px) {
     min-height: 100vh;
   }
