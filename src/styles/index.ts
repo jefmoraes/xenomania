@@ -112,7 +112,7 @@ export const ContentCards = styled.div`
   @media (max-width: 540px) {
     gap: 24px;
     padding: 0px 16px 10px;
-    margin-right: 16px;
+    margin: 0 16px;
   }
 
   `;
