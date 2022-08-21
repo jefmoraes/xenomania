@@ -170,10 +170,6 @@ export const Input = styled.input`
     opacity: 0.7;
   }
 
-  @media (max-width:540px) {
-   font-size: 15px;
-  }
-
 `;
 
 export const SendButton = styled.button`
