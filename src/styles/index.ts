@@ -48,11 +48,12 @@ export const HelpButton = styled.button`
   color: white;
   font-size: 15px;  
   cursor: pointer;
-
+  
   @media (max-width: 540px) {
     padding: 10px 16px;
     font-size: 13px;
     border-radius: 18px;
+    line-height: 16px;
 
   }
 `;
@@ -81,7 +82,7 @@ export const Main = styled.main`
 
   @media (max-width: 413px) {
     gap: 0;
-    padding-top: 60px;
+    padding-top: 70px;
   }
 `;
 
@@ -110,6 +111,7 @@ export const ContentCards = styled.div`
 
   @media (max-width: 540px) {
     gap: 24px;
+    padding: 0px 16px  10px;
   }
  
   `;

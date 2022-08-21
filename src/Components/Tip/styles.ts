@@ -110,5 +110,9 @@ export const IndexTip = styled.span`
   width: 30px;
   border-radius: 15px;
   color: ${props => props.theme.colors.text};
-  background-color: ${props => props.theme.colors.secondary};
+  background-color: ${props => props.theme.colors.secondary}; 
+
+  @media (max-width: 413px ) {
+    display: none;
+  }
 `;
