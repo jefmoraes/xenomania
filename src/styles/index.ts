@@ -61,7 +61,7 @@ export const HelpButton = styled.button`
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  
   padding-top: 100px;
   justify-content: center;
   align-items: center;
@@ -75,6 +75,11 @@ export const Main = styled.main`
     gap: 24px;
     
   }
+  
+  @media (min-width: 540px) {
+    min-height: 100vh;
+  }
+
   @media (max-width: 413px) {
     gap: 0;
     padding-top: 60px;
